@@ -1,15 +1,20 @@
-# Title
+# The Value of Refactoring
 
 ## Objectives
 
--SWBAT 1
--SWBAT 2
+- Recognize how refactoring code improves readability
+- Recognize how refactoring code improves reusability
 
-#### Introduction
+## Introduction
 
-#### SWBAT 1
+- Discuss how refactoring improves code readability and reusability
+- Refactoring improves understanding of code by encouraging us to find multiple ways to solve a problem
+- Emphasize breaking methods down to singular actions
+- Caution about single line ‘super solutions’ & code brevity for the sake of brevity
 
-#### SWBAT 2
+### Recognize how refactoring code improves readability
+
+### Recognize how refactoring code improves reusability
 
 ## Conclusion
 
