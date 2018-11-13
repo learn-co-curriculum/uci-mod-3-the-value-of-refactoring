@@ -7,19 +7,40 @@
 
 ## Introduction
 
-Refactoring is a critical part of the programming process. Being able to
-_reinterpret_ code, is a great way to test how well you understand a language.
-Being able to refactor means to know the behavior of a block of code well enough
-that you can express an alternative way or writing it without altering the
-outcome or purpose.
+Refactoring is a critical part of the programming process. It's the part where
+you stop and re-read your **working** code with critical eyes. Ask yourself:
 
-In this lesson we're going to briefly demonstrate some of ways in which
+* Do I really know how this method works?
+* Am I really think this method is simple and clear
+* Is this implementation written in a way that matches the intention expressed
+  by the name of this method?
+
+Like debugging, developers spend their _entire careers_ getting better at
+refactoring. You can always learn more, always get better, always elevate a
+fellow programmer.
+
+The word refactoring comes from mathematics. Given:
+
+`24 + 12`, another way of seeing it is as `2(12 + 6)` or `6(4+2)` or `12(2 +
+1)`. In each of these mathematical expressions, the result was the same, `36`,
+but with each step the extracted _factor_ (`2`, `6`, and ultimately `12`)
+became more and more clear. In code, we want to make the obvious "heart" of the
+work of the method more and more obvious so that other programmers, including
+you in six months' time, can easily read this code and understand the most
+important bits quickly.
+
+Being able to _reinterpret_ code is a great way to test how well you understand
+a language.  Being able to refactor means to know the behavior of a block of
+code well enough that you can express an alternative way of writing it without
+altering the outcome or purpose.
+
+In this lesson, we're going to briefly demonstrate some of ways in which
 refactoring improves our code. While there are no hard rules on how to approach
-refactoring, we will also suggest a possible approach to refactoring your own
-code.
+refactoring, we will also suggest a basic process to refactoring your own code.
 
 ### Recognize how refactoring code improves readability
 
+- ( provide a simple each with accumulator and move to map )
 - Provide example of a complicated, messy function, that, after refactoring,
   becomes much more obvious. Point out some of the contents that were removed or
   rewritten without going into too much depth
@@ -56,6 +77,7 @@ just as importantly, what it _isn't_ supposed to be doing.
 
 - Rewrite code so it makes sense and is more useful to you.
 
+  - Bourdain in "Kitchen Confidential: "Work Clean"
   - Some of this may be analogous to tidying up after cooking. You may have
     made a mess while trying different ways to solve a problem - unused or
     unnecessary variables
