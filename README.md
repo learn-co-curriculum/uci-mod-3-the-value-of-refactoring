@@ -56,75 +56,49 @@ refactoring, we will also suggest a basic process to refactoring your own code.
 > a starting place as well as Sandi Metz's "Practical Object Oriented Design in
 > Ruby."
 
-### Recognize how refactoring code improves readability
-
-- ( provide a simple each with accumulator and move to map )
-- Provide example of a complicated, messy function, that, after refactoring,
-  becomes much more obvious. Point out some of the contents that were removed or
-  rewritten without going into too much depth
-
-### Recognize how refactoring code improves usability
-
-- Provide example method that has repetitive code and multiple distinct actions
-  that, after refactoring, becomes multiple methods, separated out and highly
-  reusable in other parts of a project. Point out some of the contents that were
-  rewritten without going into too much depth.
-
 ### Identify Refactoring Priorities
 
-Refactoring Priorities:
-
-- Reduce _noise_, boost _signal_
-- Rewrite code so it makes sense and is more useful to you
-  - Working on a project, at every stage of coding, refactor to make sure the
-    code you write will be easy to use in the near future
-- Rewrite code so it makes sense and is more useful to _future_ you and to others
-
-  - Refactor code to be able to come back in a few months and understand what you've
-    written
-  - Refactor code so that others may be able to understand and expand on it
-  - Good code is self-documenting.
-
-### Approaching Refactoring
-
-Provide a narrative - you've been working on part of a project for the last day
-and just got your methods producing what you need to produce. Resist the urge to
-forge ahead to the next step in the project as this is the perfect time to take
-a few moments to refactor. You know what your code is supposed to be doing and
-just as importantly, what it _isn't_ supposed to be doing.
-
-- Rewrite code so it makes sense and is more useful to you.
-
-  - Bourdain in "Kitchen Confidential: "Work Clean"
-  - Some of this may be analogous to tidying up after cooking. You may have
-    made a mess while trying different ways to solve a problem - unused or
-    unnecessary variables
-  - Find any code that might be reusable in later parts of your project,
-    separate and abstract it so it can be invoked independently wherever necessary
-
-- Rewrite code so it makes sense and is more useful to _future_ you.
-
-  - Assign method and variable names that accurately represent what they do
-  - Breakdown larger, opaque methods
-  - Identify unused or irrelevant code - it won't be as clear later on if there
-    are extra, unnecessary steps in a method
-  - Are there any parts of the code that stand out as peculiar or seem old/outdated?
-  - Emphasize breaking methods down to singular actions
-  - Correct poor syntax and code structure. Poor syntax adds noise.
+1. **Get it working, then get it right** Refactor only code that works. If you try to
+   refactor before the code is done you can get lost in a maze of indecision.
+   1. Get your code working (messily)
+   2. Figure out how to make sure your code still works (passes tests, when fed in test data it produces the right answer to the console)
+   3. Make small refactorings and verify that your test isn't broken _often_
+   4. Commit your updated implementation
+1. **Always be refactoring** It's not a thing "to do later" as a large-scale clean up.
+   Just like the dishes or keeping a tidy home, a few extra minutes to make sure that
+   what you commit is "clean" will save you hours of misery later.
+1. **Reduce _noise_, boost _signal_** Never let your methods be lies. If the method's called
+   `calculate_attack_damage` in a game program:
+   * Does it ever return a `String`? That's confusing against the name of the method
+   * Should this method change another player's life-points. If so, we'd expect the method
+     to be called `update_opponent_life_points`
+   * Can you extract repeated code to shared methods so that methods that use this same code
+     get to cast a spotlight on how they're different?
+1. **Establish the "voice" others will write in** As recently as the 1800's doctoral students
+    were expected to defend their dissertations in the style and voice of the author whose
+    work they'd researched. The reasoning was that a scholar of a material could add to that
+    material in a style that indicated they had become one with the material. If you leave
+    sloppy code that's hard to reason about, those who follow will not hesitate to emulate
+    that style. If you write neat, clean code, they will see that they've broken with the
+    style and try to do better.
+1. While it doesn't replace the value of tests or of comments, code that's been carefully
+   refactored tends to be self-documenting: the names are true to the implementations, the
+   implementations are brief and use the most appropriate methods in the programming language's
+   vocabulary, the tests (hopefully) provide a model of how to use the method. It's a joy
+   to work with code like this: you get to focus on making dreams real versus how to code
+   tiny pieces of those dreams
 
 ### Identify What to Avoid When Refactoring
 
-- Rewriting code so that it is as short as possible. Avoid 'super-solutions'
-  where a method is condensed down into a single line of chained actions.
-  (acknowledge that this may be done sometimes to minimize the size of files for
-  sending/receiving but that minimizing code would be something applied after
-  the code is thoroughly tested)
+Once you see how beautiful nicely-factored code looks, you might want to refactor all the
+code into succinct "magical" chained method calls. **Avoid this.**
+
+Remember, the goal is code that's friendly and approachable. You want to avoid being _too_
+clever as well as being _too_ sloppy. As ever, the middle path is the way to success.
 
 ## Conclusion
 
-- Literary analogy comparing a convoluted description to a succinct one.
+Refactoring is the process of taking existing working code and improving it for readability,
+use of the most appropriate methods, and communication with other developers. It's a skill
+that should be practiced often and which can always be improved, like debugging.
 
-- Reiterate the reusability and readability of refactored code.
-- Reiterate that being able to refactor well improves our own ability to understand code
-
-## Resources
