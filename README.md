@@ -1,6 +1,6 @@
 # The Value of Refactoring
 
-## Objectives
+## Learning Goals
 
 - Recognize how refactoring code improves readability
 - Recognize how refactoring code improves reusability
@@ -22,15 +22,16 @@ fellow programmer.
 
 The word refactoring is inspired by middle-school mathematics. Given:
 
-`24 + 12`, another way of seeing it is as `2(12 + 6)` or `6(4+2)` or `12(2 + 1)`, `36(1)`, and finally `36`.
+`24 + 12`, another way of seeing it is as `2(12 + 6)` or `6(4+2)` or
+`12(2 + 1)`, `36(1)`, and finally `36`.
 
-In each of these mathematical expressions, the result was the same, `36`. However,
-with each step the influence, the dominance, of the factor (`2`, `6`, `12`, `36`)
-became _clearer_ and the we could more easily see that the expression meant
-`36`.
+In each of these mathematical expressions, the result was the same, `36`.
+However, with each step the influence, the dominance, of the factor (`2`, `6`,
+`12`, `36`) became _clearer_ and we could more easily see that the expression
+meant `36`.
 
-In code, we want to write our methods so that the obvious "heart" of the
-of the method is more and more obvious. We want code to be so darn clever that it
+In code, we want to write our methods so that the obvious "heart" of the of the
+method is more and more obvious. We want code to be so darn clever that it
 screams "HERE'S HOW I WORK" to an on-call programmer at 3am on Sunday.
 
 Many new programmers think that code should be cleverly written to show how clever
@@ -44,7 +45,7 @@ Being able to refactor means to know the behavior of a block of
 code well enough that you can express an alternative way of writing it without
 altering the outcome or purpose.
 
-In this lesson, we're going to briefly demonstrate some of ways in which
+In this lesson, we're going to briefly demonstrate some of the ways in which
 refactoring improves our code. While there are no hard rules on how to approach
 refactoring, we will also suggest a basic process to refactoring your own code.
 
@@ -71,7 +72,7 @@ Is this method's purpose clear? The author may understand exactly what this is
 doing, at least for now, but it isn't immediately clear to others. If we were to
 apply our process for reading complex code, the entire thing can easily be
 considered _opaque_ code. It takes a tangible amount of time to figure out whats
-going on. Refactoring reduces this time - by making code clearer, the mental
+going on. Refactoring reduces this time - by making the code clearer, the mental
 burden can be at least partially lifted. Below is the same method, refactored:
 
 ```ruby
@@ -104,7 +105,7 @@ Ruby's syntax allows us to write in a very human friendly way and provides a
 variety of ways to structure code. The [`unless user`][unless] conditional works
 in the same ways as `if !user`.
 
-The outcome and the purpose of this method has remained the same. Imagine you
+The outcome and the purpose of this method have remained the same. Imagine you
 are a developer tasked to maintain code that includes this method? Which would
 you prefer?
 
@@ -219,7 +220,7 @@ end
     - Can you extract repeated code to shared methods so that methods that use
       this same code get to cast a spotlight on how they're different?
 
-4.  **Establish the "voice" others will write in** As recently as the 1800's
+4.  **Establish the "voice" others will write in** As recently as the 1800s
     doctoral students were expected to defend their dissertations in the style
     and voice of the author whose work they'd researched. The reasoning was that
     a scholar of a material could add to that material in a style that indicated
@@ -248,7 +249,7 @@ the way to success.
 
 ## Conclusion
 
-Refactoring is the process of taking existing working code and improving it for
+Refactoring is the process of taking existing, working code and improving it for
 readability, use of the most appropriate methods, and communication with other
 developers. It's a skill that should be practiced often and which can always be
 improved, like debugging.
